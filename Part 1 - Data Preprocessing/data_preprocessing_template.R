@@ -24,10 +24,11 @@ dataset$Purchased = factor(dataset$Purchased,
                          labels = c(0, 1)) 
 
 # Splitting the dataset into the Training set and Test set
-# install.packages('caTools')
-library(caTools)
-set.seed(123)
-split = sample.split(dataset$DependentVariable, SplitRatio = 0.8)
+install.packages('caTools') # Install caTools
+library(caTools) # Activate caTools 
+set.seed(123) # Same as random set in python, could be any number 
+split = sample.split(dataset$Purchased, SplitRatio = 0.8) # Prepare split method, 80% goes to training set  
+# Splits data according to true or false output for each values from the above line
 training_set = subset(dataset, split == TRUE)
 test_set = subset(dataset, split == FALSE)
 
