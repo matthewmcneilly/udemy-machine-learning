@@ -2,6 +2,7 @@
 
 # Importing the dataset
 dataset = read.csv('Data.csv')
+# dataset = dataset[, 2:3]
 
 # Take care of missing values 
 # Age Columns
