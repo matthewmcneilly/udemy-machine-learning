@@ -30,10 +30,15 @@ from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 1/3, random_state = 0)
 
 
-# Feature Scaling
+# Feature Scaling (Not required here as the sklearn.linear_model library takes care of it)
 """from sklearn.preprocessing import StandardScaler
 sc_X = StandardScaler()
 X_train = sc_X.fit_transform(X_train) 
 X_test = sc_X.transform(X_test)
 sc_y = StandardScaler() 
 y_train = sc_y.fit_transform(y_train)"""
+
+# Fitting Simple Linear Regression to the Training Set 
+from sklearn.linear_model import LinearRegression # Imports the Linear Regression Model Library 
+regressor = LinearRegression() # Creates a regressor object 
+regressor.fit(X_train, y_train) # Uses the librarys fit method 
